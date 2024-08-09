@@ -1,178 +1,142 @@
-body {
-    font-family: 'Roboto', sans-serif;
+/* Global Styles */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #444;
+    line-height: 1.6;
 }
 
 .header {
-    background-color: #004687;
-    color: #fff;
+    background-color: #27496d;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
-.logo {
-    font-size: 1.8em;
-    font-weight: 700;
+.header .logo {
+    color: #fff;
+    font-size: 2.5em;
 }
 
 .nav a {
     color: #fff;
+    margin: 0 10px;
     text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s;
     font-weight: 500;
 }
 
-.nav a:hover {
-    color: #ffcc00;
-}
-
 .hero {
-    background-color: #ffffff;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('tax-background.jpg') center/cover no-repeat;
+    color: #fff;
+    padding: 150px 20px;
     text-align: center;
-    padding: 80px 20px;
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.hero .content h2 {
-    font-size: 3em;
-    color: #004687;
-    margin-bottom: 10px;
-    animation: fadein 2s ease-in;
 }
 
 .cta-button {
-    background-color: #ffcc00;
-    color: #004687;
-    padding: 15px 30px;
-    font-size: 1.2em;
+    background-color: #009688;
+    color: white;
+    padding: 12px 25px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1.2em;
     margin-top: 20px;
 }
 
-.cta-button:hover {
-    background-color: #e6b800;
-    transform: translateY(-5px);
-}
-
 .info-section {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.card {
+    padding: 50px 20px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    padding: 20px;
-    width: calc(50% - 40px);
-    transition: box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
 }
 
-.card:hover {
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+.info-section h2 {
+    color: #27496d;
+    margin-bottom: 15px;
 }
 
-.card-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-bottom: 5px solid #004687;
+.tabs {
+    margin-top: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #27496d;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #ccc;
+}
+
+.tab-content {
+    display: none;
+    margin-top: 20px;
+}
+
+.tab-content ul {
+    list-style: disc inside;
 }
 
 .calculator-section {
-    background-color: #fff;
-    padding: 60px 20px;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
     text-align: center;
-    margin-bottom: 60px;
-}
-
-#taxCalculator {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
-#taxCalculator label {
+label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 500;
 }
 
-#taxCalculator input,
-#taxCalculator select {
-    width: 100%;
+input, select {
+    width: calc(100% - 20px);
+    max-width: 300px;
     padding: 10px;
-    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    border: 1px solid #ddd;
-    background-color: #f4f4f9;
+    margin: 0 auto;
 }
 
 .calculator-button {
-    background-color: #004687;
-    color: #fff;
-    padding: 12px 24px;
+    background-color: #009688;
+    color: white;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.calculator-button:hover {
-    background-color: #003366;
-    transform: scale(1.05);
+    font-size: 1em;
 }
 
 #result {
-    margin-top: 30px;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #004687;
+    margin-top: 20px;
+    font-size: 1.2em;
 }
 
+/* Footer */
 .footer {
-    background-color: #004687;
-    color: #fff;
+    background-color: #27496d;
+    color: white;
     text-align: center;
     padding: 15px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
 .footer a {
-    color: #ffcc00;
+    color: #ffccbc;
     text-decoration: none;
 }
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
