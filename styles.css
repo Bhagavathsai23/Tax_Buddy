@@ -200,6 +200,37 @@ input, select {
     color: #27496d;
 }
 
+/* Tax Table */
+.tax-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.tax-table th, .tax-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.tax-table th {
+    background-color: #27496d;
+    color: white;
+    font-weight: 600;
+}
+
+.tax-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tax-table tr:hover {
+    background-color: #ddd;
+}
+
+.tax-table tr td:first-child {
+    font-weight: 600;
+}
+
 /* Footer */
 .footer {
     background-color: #27496d;
@@ -218,11 +249,6 @@ input, select {
     text-decoration: none;
     font-weight: 500;
 }
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
 
 .footer a:hover {
     text-decoration: underline;
