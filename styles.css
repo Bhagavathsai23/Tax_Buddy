@@ -12,30 +12,54 @@ body {
     line-height: 1.6;
 }
 
+/* Header */
 .header {
     background-color: #27496d;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header .logo {
     color: #fff;
     font-size: 2.5em;
+    font-weight: 700;
+}
+
+.nav {
+    margin-top: 10px;
 }
 
 .nav a {
     color: #fff;
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s;
 }
 
+.nav a:hover {
+    color: #ffccbc;
+}
+
+/* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url('tax-background.jpg') center/cover no-repeat;
     color: #fff;
     padding: 150px 20px;
     text-align: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero .content h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero .content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
 .cta-button {
@@ -46,56 +70,97 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.2em;
-    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
+.cta-button:hover {
+    background-color: #00796b;
+    transform: scale(1.05);
+}
+
+/* Info Section */
 .info-section {
     padding: 50px 20px;
     background-color: #fff;
+    text-align: center;
 }
 
 .info-section h2 {
     color: #27496d;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 
+.info-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.info-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-section ul li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/* Tabs */
 .tabs {
+    text-align: center;
     margin-top: 20px;
 }
 
 .tab-button {
     padding: 10px 20px;
-    margin-right: 5px;
+    margin: 0 5px;
     background-color: #ddd;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     color: #27496d;
     font-weight: 500;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .tab-button:hover {
     background-color: #ccc;
+    transform: scale(1.05);
 }
 
 .tab-content {
     display: none;
     margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
 }
 
-.tab-content ul {
-    list-style: disc inside;
-}
-
+/* Calculator Section */
 .calculator-section {
     padding: 50px 20px;
     background-color: #f4f4f4;
     text-align: center;
 }
 
+.calculator-section h2 {
+    color: #27496d;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.calculator-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
 .form-group {
     margin-bottom: 20px;
+    text-align: left;
+    display: inline-block;
+    max-width: 500px;
 }
 
 label {
@@ -106,11 +171,12 @@ label {
 
 input, select {
     width: calc(100% - 20px);
-    max-width: 300px;
+    max-width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin: 0 auto;
+    font-size: 1em;
 }
 
 .calculator-button {
@@ -121,11 +187,18 @@ input, select {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.calculator-button:hover {
+    background-color: #00796b;
+    transform: scale(1.05);
 }
 
 #result {
     margin-top: 20px;
     font-size: 1.2em;
+    color: #27496d;
 }
 
 /* Footer */
@@ -133,10 +206,21 @@ input, select {
     background-color: #27496d;
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 15px 20px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+    margin: 10px 0;
 }
 
 .footer a {
     color: #ffccbc;
     text-decoration: none;
+    font-weight: 500;
 }
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
