@@ -20,10 +20,17 @@
         <form id="taxCalculator">
             <label for="income">Enter your income:</label>
             <input type="number" id="income" name="income" required>
-            
+
             <label for="deductions">Enter deductions:</label>
             <input type="number" id="deductions" name="deductions" required>
-            
+
+            <label for="status">Select filing status:</label>
+            <select id="status" name="status">
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="head_of_household">Head of Household</option>
+            </select>
+
             <button type="button" onclick="calculateTax()">Calculate Tax</button>
         </form>
         <div id="result"></div>
@@ -35,24 +42,60 @@
 
     <script>
         function calculateTax() {
-            const income = document.getElementById('income').value;
-            const deductions = document.getElementById('deductions').value;
+            const income = parseFloat(document.getElementById('income').value);
+            const deductions = parseFloat(document.getElementById('deductions').value);
+            const status = document.getElementById('status').value;
             let taxableIncome = income - deductions;
-            let tax;
+            let tax = 0;
 
-            // Simple tax calculation logic
-            if (taxableIncome <= 250000) {
-                tax = 0;
-            } else if (taxableIncome <= 500000) {
-                tax = taxableIncome * 0.05;
-            } else if (taxableIncome <= 1000000) {
-                tax = 12500 + (taxableIncome - 500000) * 0.2;
-            } else {
-                tax = 112500 + (taxableIncome - 1000000) * 0.3;
-            }
+            // Tax brackets and rates (example for simplicity)
+           // Tax slabs under the new regime for individuals below 60 years
+    if (age < 60) {
+        if (taxableIncome <= 300000) {
+            tax = 0; // No tax for income up to ₹2,50,000
+        } else if (taxableIncome <= 500000) {
+            tax = (taxableIncome - 250000) * 0.05; // 5% tax for income between ₹2,50,001 and ₹5,00,000
+        } else if (taxableIncome <= 750000) {
+            tax = 12500 + (taxableIncome - 500000) * 0.1; // 10% tax for income between ₹5,00,001 and ₹7,50,000
+        } else if (taxableIncome <= 1000000) {
+            tax = 37500 + (taxableIncome - 750000) * 0.15; // 15% tax for income between ₹7,50,001 and ₹10,00,000
+        } else if (taxableIncome <= 1250000) {
+            tax = 75000 + (taxableIncome - 1000000) * 0.2; // 20% tax for income between ₹10,00,001 and ₹12,50,000
+        } else if (taxableIncome <= 1500000) {
+            tax = 125000 + (taxableIncome - 1250000) * 0.25; // 25% tax for income between ₹12,50,001 and ₹15,00,000
+        } else {
+            tax = 187500 + (taxableIncome - 1500000) * 0.3; // 30% tax for income above ₹15,00,000
+        }
+
+    // Tax slabs for senior citizens (60 to 79 years)
+    } else if (age >= 60 && age < 80) {
+        if (taxableIncome <= 300000) {
+            tax = 0; // No tax for income up to ₹3,00,000
+        } else if (taxableIncome <= 500000) {
+            tax = (taxableIncome - 300000) * 0.05; // 5% tax for income between ₹3,00,001 and ₹5,00,000
+        } else if (taxableIncome <= 750000) {
+            tax = 10000 + (taxableIncome - 500000) * 0.1; // 10% tax for income between ₹5,00,001 and ₹7,50,000
+        } else {
+            // Continue similar calculations for higher slabs
+        }
+
+    // Tax slabs for super senior citizens (80 years and above)
+    } else {
+        if (taxableIncome <= 500000) {
+            tax = 0; // No tax for income up to ₹5,00,000
+        } else if (taxableIncome <= 750000) {
+            tax = (taxableIncome - 500000) * 0.1; // 10% tax for income between ₹5,00,001 and ₹7,50,000
+        } else {
+            // Continue similar calculations for higher slabs
+        }
+    }
+
+    return tax;
+}
 
             document.getElementById('result').innerHTML = `<h3>Your calculated tax is: ₹${tax.toFixed(2)}</h3>`;
         }
     </script>
 </body>
 </html>
+
