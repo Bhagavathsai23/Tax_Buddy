@@ -12,7 +12,6 @@ function openTab(tabId) {
 function calculateTax() {
     const income = parseFloat(document.getElementById('income').value);
     const financialYear = document.getElementById('financialYear').value;
-    const ageCategory = document.getElementById('age').value;
 
     if (isNaN(income) || income <= 0) {
         alert("Please enter a valid income");
@@ -21,15 +20,14 @@ function calculateTax() {
 
     let tax = 0;
 
-    // Tax calculations based on the financial year
     if (financialYear === '2023') {
         if (income <= 250000) tax = 0;
         else if (income <= 500000) tax = (income - 250000) * 0.05;
         else if (income <= 750000) tax = 12500 + (income - 500000) * 0.10;
         else if (income <= 1000000) tax = 37500 + (income - 750000) * 0.15;
         else if (income <= 1250000) tax = 75000 + (income - 1000000) * 0.20;
-        else if (income <= 1500000) tax = 125000 + (income - 1250000) * 0.20 + 0.10 * (income - 1250000); // Surcharge for 12,50,001 to 15,00,000
-        else tax = 187500 + (income - 1500000) * 0.30 + 0.10 * (income - 1500000); // Surcharge for above 15,00,000
+        else if (income <= 1500000) tax = 125000 + (income - 1250000) * 0.20 + (income - 1250000) * 0.10; // Surcharge
+        else tax = 187500 + (income - 1500000) * 0.30 + (income - 1500000) * 0.10; // Surcharge
     } else if (financialYear === '2024') {
         if (income <= 300000) tax = 0;
         else if (income <= 600000) tax = (income - 300000) * 0.05;
@@ -39,7 +37,7 @@ function calculateTax() {
         else tax = 150000 + (income - 1500000) * 0.30;
     }
 
-    // Apply standard deduction based on the regime
+    // Apply standard deduction
     const standardDeduction = financialYear === '2024' ? 75000 : 50000;
     tax = Math.max(tax - standardDeduction, 0); // Ensure tax doesn't go negative
 
