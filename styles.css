@@ -230,6 +230,45 @@ input, select {
     margin: 10px 0;
 }
 
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Specific Styling for Old Regime and New Regime */
+#old-regime table,
+#new-regime table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#old-regime th, #new-regime th,
+#old-regime td, #new-regime td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#old-regime th {
+    background-color: #f4f4f4;
+}
+
+#new-regime th {
+    background-color: #f4f4f4;
+}
+
 /* Footer */
 .footer {
     background-color: #27496d;
@@ -252,6 +291,7 @@ input, select {
 .footer a:hover {
     text-decoration: underline;
 }
+
 
 
 .footer a:hover {
