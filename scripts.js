@@ -28,3 +28,6 @@ function calculateTax() {
     `;
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('TaxBuddy is ready!');
+});
