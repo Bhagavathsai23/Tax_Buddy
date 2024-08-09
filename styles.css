@@ -1,260 +1,184 @@
-/* Global Styles */
-* {
-    box-sizing: border-box;
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
-body {
-    background-color: #f9f9f9;
-    color: #444;
-    line-height: 1.6;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
-    cursor: pointer;
-}
-
-/* Header */
-.header {
-    background-color: #27496d;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header .logo {
-    color: #fff;
-    font-size: 2.5em;
-    font-weight: 700;
-}
-
-.nav {
-    margin-top: 10px;
-}
-
-.nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.nav a:hover {
-    color: #ffccbc;
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('tax-background.jpg') center/cover no-repeat;
-    color: #fff;
-    padding: 150px 20px;
-    text-align: center;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.hero .content h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
-}
-
-.hero .content p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.cta-button {
-    background-color: #009688;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #00796b;
-    transform: scale(1.05);
-}
-
-/* Info Section */
-.info-section {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.info-section h2 {
-    color: #27496d;
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-.info-section p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
-.info-section p strong {
-    font-weight: 600;
     color: #333;
 }
 
-.info-section ul {
-    list-style: none;
-    padding: 0;
+.header {
+    background: #282c34;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.info-section ul li {
-    font-size: 1.1em;
+.header .logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background: #f8f9fa;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cta-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background: #0056b3;
+}
+
+.info-section {
+    padding: 20px;
+    background: #ffffff;
     margin: 10px 0;
 }
 
-/* Tabs */
+.info-section h2 {
+    margin-top: 0;
+}
+
 .tabs {
-    text-align: center;
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .tab-button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    background-color: #ddd;
+    background: #007bff;
+    color: white;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    color: #27496d;
-    font-weight: 500;
-    transition: background-color 0.3s, transform 0.3s;
+    margin-right: 5px;
 }
 
 .tab-button:hover {
-    background-color: #ccc;
-    transform: scale(1.05);
+    background: #0056b3;
 }
 
 .tab-content {
     display: none;
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
 }
 
-/* Calculator Section */
 .calculator-section {
-    padding: 50px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.calculator-section h2 {
-    color: #27496d;
-    margin-bottom: 20px;
-    font-size: 2em;
+    padding: 20px;
+    background: #f8f9fa;
+    margin: 10px 0;
 }
 
 .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-    display: inline-block;
-    max-width: 500px;
+    margin-bottom: 15px;
 }
 
-label {
+.form-group label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
+    margin-bottom: 5px;
 }
 
-input, select {
-    width: calc(100% - 20px);
+.form-group input,
+.form-group select {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    margin: 0 auto;
-    font-size: 1em;
 }
 
 .calculator-button {
-    background-color: #009688;
+    background: #007bff;
     color: white;
-    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .calculator-button:hover {
-    background-color: #00796b;
-    transform: scale(1.05);
+    background: #0056b3;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #27496d;
+.info-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
 }
 
-/* Tax Refund Section */
-#tax-refund {
-    background-color: #fff;
-    padding: 50px 20px;
-}
-
-#tax-refund h2 {
-    color: #27496d;
-    margin-bottom: 20px;
-}
-
-#tax-refund ul {
-    list-style: disc inside;
-    padding: 0;
-}
-
-#tax-refund li {
-    font-size: 1.1em;
-    margin: 10px 0;
-}
-
-/* Footer */
-.footer {
-    background-color: #27496d;
+footer {
+    background: #282c34;
     color: white;
+    padding: 10px 20px;
     text-align: center;
-    padding: 15px 20px;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.footer p {
-    margin: 10px 0;
-}
-
-.footer a {
-    color: #ffccbc;
+footer a {
+    color: #61dafb;
     text-decoration: none;
-    font-weight: 500;
 }
 
-.footer a:hover {
+footer a:hover {
     text-decoration: underline;
 }
 
-
-.footer a:hover {
-    text-decoration: underline;
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
 }
 
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.tax-table {
+    margin-top: 20px;
+}
+
+/* Specific Styling for Old Regime and New Regime */
+#old-regime table,
+#new-regime table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#old-regime th, #new-regime th,
+#old-regime td, #new-regime td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#old-regime th {
+    background-color: #f4f4f4;
+}
+
+#new-regime th {
+    background-color: #f4f4f4;
+}
