@@ -2,21 +2,21 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f0f2f5;
     color: #333;
 }
 
 .header {
-    background-color: #4a88e4;
+    background-color: #004687;
     color: #fff;
-    padding: 10px 20px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: 700;
 }
 
@@ -25,46 +25,83 @@ body {
     text-decoration: none;
     margin-left: 20px;
     transition: color 0.3s;
+    font-weight: 500;
 }
 
 .nav a:hover {
-    color: #ddd;
+    color: #ffcc00;
 }
 
 .hero {
     background-color: #ffffff;
     text-align: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero .content h2 {
-    font-size: 2.5em;
+    font-size: 3em;
+    color: #004687;
     margin-bottom: 10px;
+    animation: fadein 2s ease-in;
+}
+
+.cta-button {
+    background-color: #ffcc00;
+    color: #004687;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #e6b800;
+    transform: translateY(-5px);
 }
 
 .info-section {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .card {
     background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px;
     padding: 20px;
-    transition: transform 0.3s;
+    width: calc(50% - 40px);
+    transition: box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 5px solid #004687;
 }
 
 .calculator-section {
     background-color: #fff;
-    padding: 40px 20px;
+    padding: 60px 20px;
     text-align: center;
+    margin-bottom: 60px;
 }
 
 #taxCalculator {
@@ -73,46 +110,69 @@ body {
     text-align: left;
 }
 
+.form-group {
+    margin-bottom: 20px;
+}
+
 #taxCalculator label {
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
 }
 
-#taxCalculator input, #taxCalculator select {
+#taxCalculator input,
+#taxCalculator select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #ddd;
+    background-color: #f4f4f9;
 }
 
 .calculator-button {
-    background-color: #4a88e4;
+    background-color: #004687;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 .calculator-button:hover {
-    background-color: #3c6fbc;
+    background-color: #003366;
+    transform: scale(1.05);
 }
 
 #result {
-    margin-top: 20px;
-    font-size: 1.2em;
+    margin-top: 30px;
+    font-size: 1.5em;
     font-weight: bold;
+    color: #004687;
 }
 
 .footer {
-    background-color: #4a88e4;
+    background-color: #004687;
     color: #fff;
     text-align: center;
-    padding: 10px 20px;
-    position: absolute;
-    width: 100%;
+    padding: 15px 0;
+    position: relative;
     bottom: 0;
+    width: 100%;
 }
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
