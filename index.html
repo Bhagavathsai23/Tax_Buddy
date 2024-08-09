@@ -4,56 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Income Tax Guide & Calculator</title>
+    <title>Tax Buddy - Your Tax Companion</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-
     <header class="header">
-        <h1 class="logo">IncomeTax</h1>
+        <h1 class="logo">Tax Buddy</h1>
         <nav class="nav">
             <a href="#home">Home</a>
-            <a href="#calculator">Calculator</a>
-            <a href="#benefits">Benefits</a>
-            <a href="#contact">Contact Us</a>
+            <a href="#why-tax">Why Pay Tax</a>
+            <a href="#tax-laws">Tax Laws & Slabs</a>
+            <a href="#calculator">Tax Calculator</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="content">
-            <h2 class="fade-in">Welcome to the Income Tax Guide</h2>
-            <p class="fade-in delay-1">Get insights on taxes and make informed financial decisions.</p>
-            <button class="cta-button">Get Started</button>
+            <h2>Welcome to Tax Buddy</h2>
+            <p>Your ultimate companion for understanding and calculating income tax.</p>
+            <button class="cta-button" onclick="scrollToSection('calculator')">Start Now</button>
         </div>
     </section>
 
-    <section class="info-section" id="benefits">
-        <div class="card">
-            <img src="tax-why.jpg" alt="Why Pay Tax?" class="card-image">
-            <h3>Why Pay Tax?</h3>
-            <p>Taxes are crucial for funding public services such as healthcare, education, and infrastructure.</p>
-        </div>
+    <section id="why-tax" class="info-section">
+        <h2>Why Pay Tax?</h2>
+        <p>Taxes are essential for funding public services like healthcare, education, infrastructure, and more. They help reduce economic inequality and support the functioning of the government.</p>
+    </section>
 
-        <div class="card">
-            <img src="tax-income.jpg" alt="What is Income Tax?" class="card-image">
-            <h3>What is Income Tax?</h3>
-            <p>Income tax is a tax imposed by the government on the income earned by individuals and businesses.</p>
+    <section id="tax-laws" class="info-section">
+        <h2>Tax Laws & Slabs</h2>
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab('old-regime')">Old Regime</button>
+            <button class="tab-button" onclick="openTab('new-regime')">New Regime</button>
         </div>
-
-        <div class="card">
-            <img src="tax-eligible.jpg" alt="Who Needs to Pay Tax?" class="card-image">
-            <h3>Who Needs to Pay Tax?</h3>
-            <p>Individuals and businesses that earn income above certain thresholds are required to pay income tax.</p>
-        </div>
-
-        <div class="card">
-            <img src="tax-tips.jpg" alt="Tips for Tax Benefits" class="card-image">
-            <h3>Tips for Tax Benefits</h3>
+        <div id="old-regime" class="tab-content">
+            <h3>Old Regime</h3>
             <ul>
-                <li>Invest in tax-saving instruments such as retirement funds and tax-free bonds.</li>
-                <li>Claim deductions for expenses like education, healthcare, and home loan interest.</li>
+                <li>Various deductions under sections like 80C, 80D, etc.</li>
+                <li>Slabs vary based on age group: below 60, 60-80, over 80.</li>
+            </ul>
+        </div>
+        <div id="new-regime" class="tab-content" style="display:none;">
+            <h3>New Regime</h3>
+            <ul>
+                <li>No deductions except standard deduction and certain specified deductions.</li>
+                <li>Same slab for all age groups.</li>
             </ul>
         </div>
     </section>
@@ -62,12 +61,15 @@
         <h2>Income Tax Calculator</h2>
         <form id="taxCalculator">
             <div class="form-group">
-                <label for="income">Enter your annual income:</label>
-                <input type="number" id="income" name="income" required>
+                <label for="financialYear">Choose Financial Year:</label>
+                <select id="financialYear" name="financialYear" required>
+                    <option value="2023">2023-2024</option>
+                    <option value="2024">2024-2025</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="deductions">Enter deductions (if any):</label>
-                <input type="number" id="deductions" name="deductions" value="0">
+                <label for="income">Enter your annual income:</label>
+                <input type="number" id="income" name="income" placeholder="Income in INR" required>
             </div>
             <div class="form-group">
                 <label for="age">Select your age category:</label>
@@ -77,70 +79,17 @@
                     <option value="above80">Above 80</option>
                 </select>
             </div>
+            <button type="button" class="calculator-button" onclick="calculateTax()">Calculate Tax</button>
         </form>
-        <button class="calculator-button" onclick="calculateTax()">Calculate Tax</button>
         <div id="result"></div>
     </section>
 
-    <script>
-        function calculateTax() {
-            const income = parseFloat(document.getElementById('income').value);
-            const deductions = parseFloat(document.getElementById('deductions').value);
-            const age = document.getElementById('age').value;
-
-            let taxableIncome = income - deductions;
-            taxableIncome = Math.max(taxableIncome, 0);
-            let tax = 0;
-
-            const taxBrackets = {
-                below60: [
-                    { limit: 250000, rate: 0 },
-                    { limit: 500000, rate: 0.05 },
-                    { limit: 750000, rate: 0.1 },
-                    { limit: 1000000, rate: 0.15 },
-                    { limit: 1250000, rate: 0.2 },
-                    { limit: 1500000, rate: 0.25 },
-                    { limit: Infinity, rate: 0.3 },
-                ],
-                "60to80": [
-                    { limit: 300000, rate: 0 },
-                    { limit: 500000, rate: 0.05 },
-                    { limit: 750000, rate: 0.1 },
-                    { limit: 1000000, rate: 0.15 },
-                    { limit: 1250000, rate: 0.2 },
-                    { limit: 1500000, rate: 0.25 },
-                    { limit: Infinity, rate: 0.3 },
-                ],
-                "above80": [
-                    { limit: 500000, rate: 0 },
-                    { limit: 1000000, rate: 0.1 },
-                    { limit: 1250000, rate: 0.2 },
-                    { limit: 1500000, rate: 0.25 },
-                    { limit: Infinity, rate: 0.3 },
-                ],
-            };
-
-            let brackets = taxBrackets[age];
-            let previousLimit = 0;
-
-            for (let i = 0; i < brackets.length; i++) {
-                let bracket = brackets[i];
-                if (taxableIncome > bracket.limit) {
-                    tax += (bracket.limit - previousLimit) * bracket.rate;
-                    previousLimit = bracket.limit;
-                } else {
-                    tax += (taxableIncome - previousLimit) * bracket.rate;
-                    break;
-                }
-            }
-
-            document.getElementById('result').innerHTML = `<h3>Your calculated tax is: ₹${tax.toFixed(2)}</h3>`;
-        }
-    </script>
-<footer class="footer">
-        <p>&copy; 2024 Income Tax Guide | <a href="#contact">Contact Us</a></p>
+    <footer class="footer">
+        <p>&copy; 2024 Tax Buddy. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@taxbuddy.com">info@taxbuddy.com</a></footer>
     </footer>
 </body>
 
 </html>
+
 
