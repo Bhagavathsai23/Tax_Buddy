@@ -96,6 +96,11 @@ body {
     margin-bottom: 20px;
 }
 
+.info-section p strong {
+    font-weight: 600;
+    color: #333;
+}
+
 .info-section ul {
     list-style: none;
     padding: 0;
@@ -105,37 +110,11 @@ body {
     font-size: 1.1em;
     margin: 10px 0;
 }
-/* Info Section - Documents Required */
-.info-section {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
-}
-
-.info-section h2 {
-    color: #27496d;
-    margin-bottom: 20px;
-    font-size: 2em;
-}
-
-.info-section p {
-    font-size: 1.1em;
-    margin: 15px 0;
-}
-
-.info-section p strong {
-    font-weight: 600;
-    color: #333;
-}
-
 
 /* Tabs */
 .tabs {
     text-align: center;
     margin-top: 20px;
-}
-.tax-table tr {
-  border-bottom: 1px solid #ccc; /* Adjust color as needed */
 }
 
 .tab-button {
@@ -177,11 +156,6 @@ body {
     font-size: 2em;
 }
 
-.calculator-section p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -197,7 +171,6 @@ label {
 
 input, select {
     width: calc(100% - 20px);
-    max-width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -245,6 +218,11 @@ input, select {
     text-decoration: none;
     font-weight: 500;
 }
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
 
 .footer a:hover {
     text-decoration: underline;
