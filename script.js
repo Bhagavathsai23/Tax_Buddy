@@ -44,4 +44,5 @@ function calculateTax() {
     document.getElementById('result').innerHTML = `<h3>Your calculated tax is: ₹${tax.toFixed(2)}</h3>`;
 }
 
+
  
