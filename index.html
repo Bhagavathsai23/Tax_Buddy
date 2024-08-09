@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -59,7 +59,7 @@
         </div>
         
         <!-- New Cards Specific to Indian Tax System -->
-        <div class="card slide-up delay-5">
+         <!-- <div class="card slide-up delay-5">
             <h3>Indian Tax Slabs and Rates</h3>
             <p>For the financial year 2023-24, income tax rates are divided into several slabs. Learn more about the applicable rates here.</p>
             <ul>
@@ -106,9 +106,9 @@
         <p>&copy; 2024 Income Tax Guide</p>
     </footer>
 
-    <!-- Optional JavaScript for smooth scroll -->
+    <!-- Optional JavaScript for smooth scroll 
     <script>
-        document.querySelectorAll('.nav a').forEach(anchor => {
+        /*document.querySelectorAll('.nav a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -116,9 +116,84 @@
                 });
             });
         });
-    </script>
+    </script> */
 
 </body>
+</html>-->
+
+<!-- new code-->
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Tax Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">IncomeTax</h1>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Calculator</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="content">
+            <h2 class="fade-in">Welcome to the Income Tax Guide</h2>
+            <p class="fade-in delay-1">Get insights on taxes and make informed financial decisions.</p>
+            <button class="cta-button fade-in delay-2">Learn More</button>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <div class="card slide-up">
+            <h3>Why Pay Tax?</h3>
+            <p>Taxes are essential for funding public services such as healthcare, education, and infrastructure. They also help reduce economic inequality and provide financial stability to the government.</p>
+            <button class="read-more">Read More</button>
+        </div>
+        <div class="card slide-up delay-1">
+            <h3>What is Income Tax?</h3>
+            <p>Income tax is a levy imposed by the government on the income earned by individuals and businesses. It is a primary source of revenue for governments and is used to fund various public services.</p>
+            <button class="read-more">Read More</button>
+        </div>
+        <div class="card slide-up delay-2">
+            <h3>Who Needs to Pay Tax?</h3>
+            <p>Anyone who earns income above a certain threshold is required to pay income tax. This includes individuals, companies, and other entities that generate earnings.</p>
+            <button class="read-more">Read More</button>
+        </div>
+        <div class="card slide-up delay-3">
+            <h3>What Income is Taxable?</h3>
+            <p>Taxable income includes wages, salaries, bonuses, rental income, and investment income. There are also specific exemptions and deductions available depending on the jurisdiction.</p>
+            <button class="read-more">Read More</button>
+        </div>
+        <div class="card slide-up delay-4">
+            <h3>Tips for Tax Benefits</h3>
+            <ul>
+                <li>Invest in tax-saving instruments such as retirement funds and savings bonds.</li>
+                <li>Claim deductions for expenses like education, healthcare, and mortgage interest.</li>
+                <li>Keep accurate records of all deductible expenses and investments.</li>
+            </ul>
+            <button class="read-more">Read More</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Income Tax Guide</p>
+    </footer>
+
+    <!-- Optional JavaScript for smooth scroll -->
+    <script>
+        document.querySelectorAll('.nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            });
+        });
+    </script>
+</body>
 </html>
-
-
