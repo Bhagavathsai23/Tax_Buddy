@@ -105,6 +105,29 @@ body {
     font-size: 1.1em;
     margin: 10px 0;
 }
+/* Info Section - Documents Required */
+.info-section {
+    padding: 50px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.info-section h2 {
+    color: #27496d;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.info-section p {
+    font-size: 1.1em;
+    margin: 15px 0;
+}
+
+.info-section p strong {
+    font-weight: 600;
+    color: #333;
+}
+
 
 /* Tabs */
 .tabs {
