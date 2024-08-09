@@ -134,6 +134,9 @@ body {
     text-align: center;
     margin-top: 20px;
 }
+.tax-table tr {
+  border-bottom: 1px solid #ccc; /* Adjust color as needed */
+}
 
 .tab-button {
     padding: 10px 20px;
