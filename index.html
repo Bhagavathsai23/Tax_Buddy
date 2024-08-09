@@ -48,12 +48,53 @@
             <button class="tab-button" onclick="openTab('new-regime')">New Regime</button>
         </div>
         <div id="old-regime" class="tab-content">
-            <h3>Old Regime</h3>
-            <ul>
-                <li>Various deductions under sections like 80C, 80D, etc.</li>
-                <li>Slabs vary based on age group: below 60, 60-80, over 80.</li>
-            </ul>
-        </div>
+  <h3>Old Regime</h3>
+  <ul>
+    <li>Various deductions under sections like 80C, 80D, etc.</li>
+    <li>Slabs vary based on age group: below 60, 60-80, over 80.</li>
+  </ul>
+
+  <h4>Tax Slabs</h4>
+  <table>
+    <thead>
+      <tr>
+        <th>Income Range (Rs.)</th>
+        <th>Tax Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Up to 2,50,000</td>
+        <td>Nil</td>
+      </tr>
+      <tr>
+        <td>2,50,001 - 5,00,000</td>
+        <td>5%</td>
+      </tr>
+      <tr>
+        <td>5,00,001 - 7,50,000</td>
+        <td>10%</td>
+      </tr>
+      <tr>
+        <td>7,50,001 - 10,00,000</td>
+        <td>15%</td>
+      </tr>
+      <tr>
+        <td>10,00,001 - 12,50,000</td>
+        <td>20%</td>
+      </tr>
+      <tr>
+        <td>12,50,001 - 15,00,000</td>
+        <td>20% + 10% surcharge</td>
+      </tr>
+      <tr>
+        <td>Above 15,00,000</td>
+        <td>30% + 10% surcharge</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
         <div id="new-regime" class="tab-content" style="display:none;">
             <h3>New Regime</h3>
             <ul>
@@ -67,13 +108,6 @@
         <h2>Income Tax Calculator</h2>
         <p>The Income Tax Calculator is an easy-to-use online tool that helps you estimate your taxes based on your income after the Union Budget is presented. We have updated our tool in line with the income tax changes proposed in the Union Budget 2024-25.</p>
         <p>Before e-filing your income tax returns, ensure you have the following details ready:</p>
-        <ul>
-            <li>Basic information such as PAN, Aadhar Card details, and current address.</li>
-            <li>All the bank account details held in a financial year.</li>
-            <li>Income proofs like current salary details, income from investments (like FDs, savings bank account), etc.</li>
-            <li>All the deductions claimed under Section 80 or Chapter VI-A.</li>
-            <li>Tax payment details such as TDS and advance tax payments.</li>
-        </ul>
         <form id="taxCalculator">
             <div class="form-group">
                 <label for="financialYear">Choose Financial Year:</label>
