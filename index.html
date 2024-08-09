@@ -122,12 +122,12 @@
 </html>-->
 
 <!-- new code-->
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Income Tax Guide</title>
+    <title>Income Tax Guide & Calculator</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -135,65 +135,118 @@
     <header class="header">
         <h1 class="logo">IncomeTax</h1>
         <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="calculator.html">Calculator</a>
+            <a href="#home">Home</a>
+            <a href="#calculator">Calculator</a>
         </nav>
     </header>
 
-    <section class="hero">
+    <section id="home" class="hero">
         <div class="content">
             <h2 class="fade-in">Welcome to the Income Tax Guide</h2>
             <p class="fade-in delay-1">Get insights on taxes and make informed financial decisions.</p>
-            <button class="cta-button fade-in delay-2">Learn More</button>
+            <button class="cta-button fade-in delay-2" onclick="scrollToCalculator()">Get Started</button>
         </div>
     </section>
 
     <section class="info-section">
         <div class="card slide-up">
             <h3>Why Pay Tax?</h3>
-            <p>Taxes are essential for funding public services such as healthcare, education, and infrastructure. They also help reduce economic inequality and provide financial stability to the government.</p>
-            <button class="read-more">Read More</button>
+            <p>Taxes are crucial for funding public services such as healthcare, education, and infrastructure. They also help reduce economic inequality and support governmental functions.</p>
         </div>
         <div class="card slide-up delay-1">
             <h3>What is Income Tax?</h3>
-            <p>Income tax is a levy imposed by the government on the income earned by individuals and businesses. It is a primary source of revenue for governments and is used to fund various public services.</p>
-            <button class="read-more">Read More</button>
+            <p>Income tax is a tax imposed by the government on the income earned by individuals and businesses. It is a key revenue source used to finance various public services and programs.</p>
         </div>
         <div class="card slide-up delay-2">
             <h3>Who Needs to Pay Tax?</h3>
-            <p>Anyone who earns income above a certain threshold is required to pay income tax. This includes individuals, companies, and other entities that generate earnings.</p>
-            <button class="read-more">Read More</button>
+            <p>Individuals and businesses that earn income above certain thresholds are required to pay income tax. This requirement helps fund public services and government operations.</p>
         </div>
         <div class="card slide-up delay-3">
             <h3>What Income is Taxable?</h3>
-            <p>Taxable income includes wages, salaries, bonuses, rental income, and investment income. There are also specific exemptions and deductions available depending on the jurisdiction.</p>
-            <button class="read-more">Read More</button>
+            <p>Taxable income includes wages, salaries, bonuses, rental income, and investment income. Specific exemptions and deductions might apply based on your jurisdiction.</p>
         </div>
         <div class="card slide-up delay-4">
             <h3>Tips for Tax Benefits</h3>
             <ul>
-                <li>Invest in tax-saving instruments such as retirement funds and savings bonds.</li>
-                <li>Claim deductions for expenses like education, healthcare, and mortgage interest.</li>
-                <li>Keep accurate records of all deductible expenses and investments.</li>
+                <li>Invest in tax-saving instruments such as retirement funds and tax-free bonds.</li>
+                <li>Claim deductions for expenses like education, healthcare, and home loan interest.</li>
+                <li>Keep detailed records of all deductible expenses to maximize your tax savings.</li>
             </ul>
-            <button class="read-more">Read More</button>
         </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+        <h2>Income Tax Calculator</h2>
+        <form id="taxCalculator">
+            <label for="income">Enter your annual income:</label>
+            <input type="number" id="income" name="income" required>
+
+            <label for="deductions">Enter deductions (if any):</label>
+            <input type="number" id="deductions" name="deductions" value="0">
+
+            <label for="status">Select filing status:</label>
+            <select id="status" name="status">
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="head_of_household">Head of Household</option>
+            </select>
+
+            <button type="button" onclick="calculateTax()">Calculate Tax</button>
+        </form>
+        <div id="result"></div>
     </section>
 
     <footer class="footer">
         <p>&copy; 2024 Income Tax Guide</p>
     </footer>
 
-    <!-- Optional JavaScript for smooth scroll -->
     <script>
-        document.querySelectorAll('.nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ 
-                    behavior: 'smooth' 
-                });
-            });
-        });
+        function calculateTax() {
+            const income = parseFloat(document.getElementById('income').value);
+            const deductions = parseFloat(document.getElementById('deductions').value);
+            const status = document.getElementById('status').value;
+            let taxableIncome = income - deductions;
+            let tax = 0;
+
+            // Tax brackets and rates (example for simplicity)
+            const taxBrackets = {
+                single: [
+                    { limit: 10000, rate: 0.1 },
+                    { limit: 40000, rate: 0.2 },
+                    { limit: Infinity, rate: 0.3 }
+                ],
+                married: [
+                    { limit: 20000, rate: 0.1 },
+                    { limit: 80000, rate: 0.2 },
+                    { limit: Infinity, rate: 0.3 }
+                ],
+                head_of_household: [
+                    { limit: 15000, rate: 0.1 },
+                    { limit: 60000, rate: 0.2 },
+                    { limit: Infinity, rate: 0.3 }
+                ]
+            };
+
+            let brackets = taxBrackets[status];
+            let previousLimit = 0;
+
+            for (let i = 0; i < brackets.length; i++) {
+                let bracket = brackets[i];
+                if (taxableIncome > bracket.limit) {
+                    tax += (bracket.limit - previousLimit) * bracket.rate;
+                    previousLimit = bracket.limit;
+                } else {
+                    tax += (taxableIncome - previousLimit) * bracket.rate;
+                    break;
+                }
+            }
+
+            document.getElementById('result').innerHTML = `<h3>Your calculated tax is: ₹${tax.toFixed(2)}</h3>`;
+        }
+
+        function scrollToCalculator() {
+            document.getElementById('calculator').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
 </body>
 </html>
