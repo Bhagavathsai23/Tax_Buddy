@@ -7,33 +7,52 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Income Tax Calculator</h1>
-        <nav>
+    <header class="header">
+        <h1 class="logo">IncomeTax</h1>
+        <nav class="nav">
             <a href="index.html">Home</a>
-            <a href="calculator.html">Income Tax Calculator</a>
+            <a href="calculator.html">Calculator</a>
         </nav>
     </header>
-    
-    <section id="calculator">
-        <h2>Calculate Your Income Tax</h2>
-        <form id="taxForm">
-            <label for="income">Enter Your Income:</label>
+
+    <section class="calculator-section">
+        <h2>Income Tax Calculator</h2>
+        <form id="taxCalculator">
+            <label for="income">Enter your income:</label>
             <input type="number" id="income" name="income" required>
-
-            <label for="deductions">Enter Deductions:</label>
-            <input type="number" id="deductions" name="deductions">
-
+            
+            <label for="deductions">Enter deductions:</label>
+            <input type="number" id="deductions" name="deductions" required>
+            
             <button type="button" onclick="calculateTax()">Calculate Tax</button>
         </form>
-
-        <h3 id="result"></h3>
+        <div id="result"></div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2024 Income Tax Guide</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function calculateTax() {
+            const income = document.getElementById('income').value;
+            const deductions = document.getElementById('deductions').value;
+            let taxableIncome = income - deductions;
+            let tax;
+
+            // Simple tax calculation logic
+            if (taxableIncome <= 250000) {
+                tax = 0;
+            } else if (taxableIncome <= 500000) {
+                tax = taxableIncome * 0.05;
+            } else if (taxableIncome <= 1000000) {
+                tax = 12500 + (taxableIncome - 500000) * 0.2;
+            } else {
+                tax = 112500 + (taxableIncome - 1000000) * 0.3;
+            }
+
+            document.getElementById('result').innerHTML = `<h3>Your calculated tax is: ₹${tax.toFixed(2)}</h3>`;
+        }
+    </script>
 </body>
 </html>
