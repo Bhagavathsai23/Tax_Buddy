@@ -170,6 +170,7 @@ button {
     text-align: left;
     display: inline-block;
     max-width: 500px;
+    width: 100%;
 }
 
 label {
@@ -292,8 +293,224 @@ th {
     text-decoration: underline;
 }
 
-
-
-.footer a:hover {
-    text-decoration: underline;
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    .header .logo {
+        font-size: 2em;
+    }
+    
+    .nav a {
+        margin: 0 10px;
+    }
+    
+    .hero .content h2 {
+        font-size: 2.5em;
+    }
+    
+    .hero .content p {
+        font-size: 1.1em;
+    }
+    
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+    
+    .info-section {
+        padding: 40px 10px;
+    }
+    
+    .info-section h2 {
+        font-size: 1.8em;
+    }
+    
+    .info-section p, .info-section ul li {
+        font-size: 1em;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        margin-bottom: 10px;
+    }
+    
+    .calculator-section {
+        padding: 40px 10px;
+    }
+    
+    .calculator-section h2 {
+        font-size: 1.8em;
+    }
+    
+    .form-group {
+        max-width: 100%;
+    }
 }
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px;
+    }
+    
+    .header .logo {
+        font-size: 1.8em;
+    }
+    
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav a {
+        margin: 10px 0;
+    }
+    
+    .hero {
+        padding: 100px 10px;
+    }
+    
+    .hero .content h2 {
+        font-size: 2em;
+    }
+    
+    .hero .content p {
+        font-size: 1em;
+    }
+    
+    .cta-button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+    
+    .info-section {
+        padding: 30px 10px;
+    }
+    
+    .info-section h2 {
+        font-size: 1.6em;
+    }
+    
+    .info-section p, .info-section ul li {
+        font-size: 0.9em;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .calculator-section {
+        padding: 30px 10px;
+    }
+    
+    .calculator-section h2 {
+        font-size: 1.6em;
+    }
+    
+    .form-group {
+        max-width: 100%;
+    }
+    
+    .footer {
+        padding: 10px 20px;
+    }
+    
+    .footer p {
+        font-size: 0.9em;
+    }
+    
+    .footer a {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+    
+    .header .logo {
+        font-size: 1.5em;
+    }
+    
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .nav a {
+        margin: 5px 0;
+    }
+    
+    .hero {
+        padding: 80px 10px;
+    }
+    
+    .hero .content h2 {
+        font-size: 1.5em;
+    }
+    
+    .hero .content p {
+        font-size: 0.9em;
+    }
+    
+    .cta-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+    
+    .info-section {
+        padding: 20px 10px;
+    }
+    
+    .info-section h2 {
+        font-size: 1.4em;
+    }
+    
+    .info-section p, .info-section ul li {
+        font-size: 0.8em;
+    }
+    
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab-button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .calculator-section {
+        padding: 20px 10px;
+    }
+    
+    .calculator-section h2 {
+        font-size: 1.4em;
+    }
+    
+    .form-group {
+        max-width: 100%;
+    }
+    
+    .footer {
+        padding: 10px 0;
+    }
+    
+    .footer p {
+        font-size: 0.8em;
+    }
+    
+    .footer a {
+        font-size: 0.8em;
+    }
+}
+
+
