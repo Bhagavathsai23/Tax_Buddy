@@ -1,636 +1,184 @@
-/* Global Styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
-
+/* Add a global font family and font size */
 body {
-    background-color: #f9f9f9;
-    color: #444;
-    line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+/* Add a container class for consistent padding */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-button {
-    cursor: pointer;
-}
-
-/* Header */
+/* Improve header styling */
 .header {
-    background-color: #27496d;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
 .header .logo {
-    color: #fff;
-    font-size: 2.5em;
-    font-weight: 700;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.nav {
-    margin-top: 10px;
+.header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav a {
-    color: #fff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
+.header .nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-right: 20px;
 }
 
-.nav a:hover {
-    color: #ffccbc;
-}
-
-/* Hero Section */
+/* Improve hero section styling */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('tax-background.jpg') center/cover no-repeat;
-    color: #fff;
-    padding: 150px 20px;
-    text-align: center;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to bottom, #333, #555);
+  background-size: 100% 300px;
+  background-position: 0% 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
 }
 
-.hero .content h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
-.hero .content p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-.cta-button {
-    background-color: #009688;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-    transition: background-color 0.3s, transform 0.3s;
+.hero .cta-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.cta-button:hover {
-    background-color: #00796b;
-    transform: scale(1.05);
-}
-
-/* Info Section */
+/* Improve info-section styling */
 .info-section {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
+  padding: 20px;
 }
 
 .info-section h2 {
-    color: #27496d;
-    margin-bottom: 20px;
-    font-size: 2em;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .info-section p {
-    font-size: 1.1em;
-    margin-bottom: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
-.info-section p strong {
-    font-weight: 600;
-    color: #333;
-}
-
-.info-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.info-section ul li {
-    font-size: 1.1em;
-    margin: 10px 0;
-}
-
-/* Tabs */
-.tabs {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.tab-button {
-    padding: 10px 20px;
-    margin: 0 5px;
-    background-color: #ddd;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #27496d;
-    font-weight: 500;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.tab-button:hover {
-    background-color: #ccc;
-    transform: scale(1.05);
-}
-
-.tab-content {
-    display: none;
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-}
-
-/* Calculator Section */
+/* Improve calculator-section styling */
 .calculator-section {
-    padding: 50px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
+  padding: 20px;
 }
 
 .calculator-section h2 {
-    color: #27496d;
-    margin-bottom: 20px;
-    font-size: 2em;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-    display: inline-block;
-    max-width: 500px;
-    width: 100%;
+.calculator-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
+.calculator-section .form-group {
+  margin-bottom: 20px;
 }
 
-input, select {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 0 auto;
-    font-size: 1em;
+.calculator-section label {
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.calculator-button {
-    background-color: #009688;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s, transform 0.3s;
+.calculator-section input, .calculator-section select {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
 }
 
-.calculator-button:hover {
-    background-color: #00796b;
-    transform: scale(1.05);
+.calculator-section .calculator-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-#result {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #27496d;
-}
-
-/* Tax Refund Section */
-#tax-refund {
-    background-color: #fff;
-    padding: 50px 20px;
-}
-
-#tax-refund h2 {
-    color: #27496d;
-    margin-bottom: 20px;
-}
-
-#tax-refund ul {
-    list-style: disc inside;
-    padding: 0;
-}
-
-#tax-refund li {
-    font-size: 1.1em;
-    margin: 10px 0;
-}
-
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-th, td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: #f4f4f4;
-}
-
-/* Specific Styling for Old Regime and New Regime */
-#old-regime table,
-#new-regime table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#old-regime th, #new-regime th,
-#old-regime td, #new-regime td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-#old-regime th {
-    background-color: #f4f4f4;
-}
-
-#new-regime th {
-    background-color: #f4f4f4;
-}
-
-/* Contact Us Section */
+/* Improve contact-section styling */
 .contact-section {
-    padding: 50px 20px;
-    background-color: #fff;
-    text-align: center;
-    border-top: 1px solid #ddd;
+  padding: 20px;
 }
 
 .contact-section h2 {
-    color: #27496d;
-    margin-bottom: 20px;
-    font-size: 2.5em;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.contact-section p {
-    color: #666;
-    font-size: 1.2em;
-    margin-bottom: 30px;
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .contact-section .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-    display: inline-block;
-    max-width: 500px;
-    width: 100%;
+  margin-bottom: 20px;
 }
 
 .contact-section label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
-.contact-section input, 
-.contact-section textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    margin: 0 auto;
+.contact-section input, .contact-section textarea {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
 }
 
-.contact-section textarea {
-    resize: vertical;
-    min-height: 100px;
+.contact-section .contact-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.contact-section button {
-    background-color: #009688;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.contact-section button:hover {
-    background-color: #00796b;
-    transform: scale(1.05);
-}
-
-/* Footer */
+/* Improve footer styling */
 .footer {
-    background-color: #27496d;
-    color: white;
-    text-align: center;
-    padding: 15px 20px;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  clear: both;
 }
 
 .footer p {
-    margin: 10px 0;
-}
-
-.footer a {
-    color: #ffccbc;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.footer a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Styles */
-@media (max-width: 1200px) {
-    .header .logo {
-        font-size: 2em;
-    }
-    
-    .nav a {
-        margin: 0 10px;
-    }
-    
-    .hero .content h2 {
-        font-size: 2.5em;
-    }
-    
-    .hero .content p {
-        font-size: 1.1em;
-    }
-    
-    .cta-button {
-        padding: 10px 20px;
-        font-size: 1em;
-    }
-    
-    .info-section {
-        padding: 40px 10px;
-    }
-    
-    .info-section h2 {
-        font-size: 1.8em;
-    }
-    
-    .info-section p, .info-section ul li {
-        font-size: 1em;
-    }
-    
-    .tabs {
-        flex-direction: column;
-    }
-    
-    .tab-button {
-        margin-bottom: 10px;
-    }
-    
-    .calculator-section {
-        padding: 40px 10px;
-    }
-    
-    .calculator-section h2 {
-        font-size: 1.8em;
-    }
-    
-    .form-group {
-        max-width: 100%;
-    }
-    
-    .contact-section {
-        padding: 40px 10px;
-    }
-    
-    .contact-section h2 {
-        font-size: 2em;
-    }
-    
-    .contact-section p {
-        font-size: 1em;
-    }
-    
-    .contact-section .form-group {
-        max-width: 100%;
-    }
-    
-    .contact-section button {
-        padding: 10px 15px;
-        font-size: 0.9em;
-    }
-}
-
-@media (max-width: 768px) {
-    .header {
-        padding: 15px;
-    }
-    
-    .header .logo {
-        font-size: 1.8em;
-    }
-    
-    .nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .nav a {
-        margin: 10px 0;
-    }
-    
-    .hero {
-        padding: 100px 10px;
-    }
-    
-    .hero .content h2 {
-        font-size: 2em;
-    }
-    
-    .hero .content p {
-        font-size: 1em;
-    }
-    
-    .cta-button {
-        padding: 10px 15px;
-        font-size: 1em;
-    }
-    
-    .info-section {
-        padding: 30px 10px;
-    }
-    
-    .info-section h2 {
-        font-size: 1.6em;
-    }
-    
-    .info-section p, .info-section ul li {
-        font-size: 0.9em;
-    }
-    
-    .tabs {
-        flex-direction: column;
-    }
-    
-    .tab-button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    
-    .calculator-section {
-        padding: 30px 10px;
-    }
-    
-    .calculator-section h2 {
-        font-size: 1.6em;
-    }
-    
-    .form-group {
-        max-width: 100%;
-    }
-    
-    .contact-section {
-        padding: 30px 10px;
-    }
-    
-    .contact-section h2 {
-        font-size: 1.6em;
-    }
-    
-    .contact-section p {
-        font-size: 0.9em;
-    }
-    
-    .contact-section button {
-        padding: 8px 15px;
-        font-size: 0.9em;
-    }
-    
-    .footer {
-        padding: 10px 20px;
-    }
-    
-    .footer p {
-        font-size: 0.9em;
-    }
-    
-    .footer a {
-        font-size: 0.9em;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        padding: 10px;
-    }
-    
-    .header .logo {
-        font-size: 1.5em;
-    }
-    
-    .nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .nav a {
-        margin: 5px 0;
-    }
-    
-    .hero {
-        padding: 80px 10px;
-    }
-    
-    .hero .content h2 {
-        font-size: 1.5em;
-    }
-    
-    .hero .content p {
-        font-size: 0.9em;
-    }
-    
-    .cta-button {
-        padding: 8px 15px;
-        font-size: 0.9em;
-    }
-    
-    .info-section {
-        padding: 20px 10px;
-    }
-    
-    .info-section h2 {
-        font-size: 1.4em;
-    }
-    
-    .info-section p, .info-section ul li {
-        font-size: 0.8em;
-    }
-    
-    .tabs {
-        flex-direction: column;
-    }
-    
-    .tab-button {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-    
-    .calculator-section {
-        padding: 20px 10px;
-    }
-    
-    .calculator-section h2 {
-        font-size: 1.4em;
-    }
-    
-    .form-group {
-        max-width: 100%;
-    }
-    
-    .contact-section {
-        padding: 20px 10px;
-    }
-    
-    .contact-section h2 {
-        font-size: 1.4em;
-    }
-    
-    .contact-section p {
-        font-size: 0.8em;
-    }
-    
-    .contact-section button {
-        padding: 8px 15px;
-        font-size: 0.8em;
-    }
-    
-    .footer {
-        padding: 10px 0;
-    }
-    
-    .footer p {
-        font-size: 0.8em;
-    }
-    
-    .footer a {
-        font-size: 0.8em;
-    }
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 
